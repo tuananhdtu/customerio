@@ -20,7 +20,11 @@ public class SwiftCustomerioPlugin: NSObject, FlutterPlugin {
           let apiKey = json["apiKey"]
           
 
-          let customerIO = CustomerIO(siteId: siteId, apiKey: apiKey, region: Region.EU)
+          _ =  CustomerIO(siteId: siteId as! String, apiKey: apiKey as! String, region: Region.EU)
+          break;
+      case "setIdentifier" :
+          let identifier =  call.arguments as! String
+          CustomerIO.shared.identify(identifier: identifier)
           break;
       default:
           break;

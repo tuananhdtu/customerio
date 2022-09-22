@@ -10,4 +10,8 @@ class Customerio {
     var customerIo = CustomerIOModel(apiKey: apiKey,siteId: siteId);
     return CustomerioPlatform.instance.initCustomerIO(jsonEncode(customerIo));
   }
+
+  Future<String?> setIdentifier(String identifier) {
+    return CustomerioPlatform.instance.setIdentifier(identifier);
+  }
 }

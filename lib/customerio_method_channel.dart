@@ -14,4 +14,11 @@ class MethodChannelCustomerio extends CustomerioPlatform {
     final version = await methodChannel.invokeMethod<String>('initCustomerIO',jsonEncode);
     return version;
   }
+
+  @override
+  Future<String?> setIdentifier(String identifier) async {
+    final version = await methodChannel.invokeMethod<String>('setIdentifier',identifier);
+    return version;
+  }
+
 }

@@ -26,4 +26,8 @@ abstract class CustomerioPlatform extends PlatformInterface {
   Future<String?> initCustomerIO(String jsonEncode) {
     throw UnimplementedError('initCustomerIO() has not been implemented.');
   }
+
+  Future<String?> setIdentifier(String identifier) {
+    throw UnimplementedError('setIdentifier() has not been implemented.');
+  }
 }
