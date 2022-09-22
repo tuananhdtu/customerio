@@ -1,11 +1,67 @@
 PODS:
   - customerio (0.0.1):
+    - CustomerIOMessagingPushFCM (~> 1.2.0-beta.1)
     - CustomerIOTracking (~> 1.2.0-beta.1)
     - Flutter
   - CustomerIOCommon (1.2.0-beta.1)
+  - CustomerIOMessagingPush (1.2.0-beta.1):
+    - CustomerIOTracking (= 1.2.0-beta.1)
+  - CustomerIOMessagingPushFCM (1.2.0-beta.1):
+    - CustomerIOMessagingPush (= 1.2.0-beta.1)
+    - FirebaseMessaging (~> 8.10.0)
   - CustomerIOTracking (1.2.0-beta.1):
     - CustomerIOCommon (= 1.2.0-beta.1)
+  - FirebaseCore (8.15.0):
+    - FirebaseCoreDiagnostics (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/Logger (~> 7.7)
+  - FirebaseCoreDiagnostics (8.15.0):
+    - GoogleDataTransport (~> 9.1)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/Logger (~> 7.7)
+    - nanopb (~> 2.30908.0)
+  - FirebaseInstallations (8.15.0):
+    - FirebaseCore (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/UserDefaults (~> 7.7)
+    - PromisesObjC (< 3.0, >= 1.2)
+  - FirebaseMessaging (8.10.0):
+    - FirebaseCore (~> 8.0)
+    - FirebaseInstallations (~> 8.0)
+    - GoogleDataTransport (~> 9.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.6)
+    - GoogleUtilities/Environment (~> 7.6)
+    - GoogleUtilities/Reachability (~> 7.6)
+    - GoogleUtilities/UserDefaults (~> 7.6)
+    - nanopb (~> 2.30908.0)
   - Flutter (1.0.0)
+  - GoogleDataTransport (9.2.0):
+    - GoogleUtilities/Environment (~> 7.7)
+    - nanopb (< 2.30910.0, >= 2.30908.0)
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/AppDelegateSwizzler (7.7.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (7.7.0):
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/Logger (7.7.0):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/Network (7.7.0):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (7.7.0)"
+  - GoogleUtilities/Reachability (7.7.0):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (7.7.0):
+    - GoogleUtilities/Logger
+  - nanopb (2.30908.0):
+    - nanopb/decode (= 2.30908.0)
+    - nanopb/encode (= 2.30908.0)
+  - nanopb/decode (2.30908.0)
+  - nanopb/encode (2.30908.0)
+  - PromisesObjC (2.1.1)
 
 DEPENDENCIES:
   - customerio (from `.symlinks/plugins/customerio/ios`)
@@ -14,7 +70,17 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - CustomerIOCommon
+    - CustomerIOMessagingPush
+    - CustomerIOMessagingPushFCM
     - CustomerIOTracking
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseInstallations
+    - FirebaseMessaging
+    - GoogleDataTransport
+    - GoogleUtilities
+    - nanopb
+    - PromisesObjC
 
 EXTERNAL SOURCES:
   customerio:
@@ -23,10 +89,20 @@ EXTERNAL SOURCES:
     :path: Flutter
 
 SPEC CHECKSUMS:
-  customerio: 62a74016eaa18843a6bc149159c49a9431abe1c9
+  customerio: 085dbc650e4e8937b57dd679d3ff669ffb0089d6
   CustomerIOCommon: 76c3e01c7bc221755b31869fda6d87b2cf8c1901
+  CustomerIOMessagingPush: 18f4d2e17b647f1d8e6e64cc6dd4a31f88dbdf46
+  CustomerIOMessagingPushFCM: e7e1c66667529257dcc5a676b44e6bba70b8e2be
   CustomerIOTracking: cdfeb8e8a9f268796b333a3e8e50d4872146c276
+  FirebaseCore: 5743c5785c074a794d35f2fff7ecc254a91e08b1
+  FirebaseCoreDiagnostics: 92e07a649aeb66352b319d43bdd2ee3942af84cb
+  FirebaseInstallations: 40bd9054049b2eae9a2c38ef1c3dd213df3605cd
+  FirebaseMessaging: b0aeba17332ee1ee610662b4d1e02a86db82f08f
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  GoogleDataTransport: 1c8145da7117bd68bbbed00cf304edb6a24de00f
+  GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
+  nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
 
 PODFILE CHECKSUM: 30517025a2fecca2d72dac25f08abb5b9a8f1a56
 

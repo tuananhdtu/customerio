@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "customerio-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/customerio/customerio-ios.git",
+      "state" : {
+        "revision" : "bfcaeea962dcf196118550ee38ca26419e9d2069",
+        "version" : "1.1.1"
+      }
+    }
+  ],
+  "version" : 2
+}
