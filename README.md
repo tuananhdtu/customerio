@@ -15,4 +15,9 @@ git: https://github.com/tuananhdtu/customer-io-plugin.git
 
 Customerio().initCustomerIO(apiKey, siteId)
 
+#Hàm setIdentifier
+
+//Tham số cần truyền identifier
+
+Customerio().setIdentifier(identifier)
 
