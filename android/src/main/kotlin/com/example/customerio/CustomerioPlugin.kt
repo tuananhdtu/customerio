@@ -2,6 +2,7 @@ package com.example.customerio
 
 import android.app.Activity
 import androidx.annotation.NonNull
+import io.customer.messagingpush.ModuleMessagingPushFCM
 import io.customer.sdk.CustomerIO
 import io.customer.sdk.data.model.Region
 import io.flutter.embedding.engine.plugins.FlutterPlugin
@@ -33,13 +34,17 @@ class CustomerioPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
             "initCustomerIO" -> {
                 val json = call.arguments
                 val jsonObject = JSONTokener(json.toString()).nextValue() as JSONObject
-                val builder = CustomerIO.Builder(
+                CustomerIO.Builder(
                     siteId = jsonObject.getString("siteId"),
                     apiKey = jsonObject.getString("apiKey"),
                     appContext = activity.application
-                )
-                builder.setRegion(Region.EU)
-                builder.build()
+                ).apply {
+                    addCustomerIOModule(ModuleMessagingPushFCM())
+                    autoTrackScreenViews(true)
+                    setRequestTimeout(8000L)
+                    setRegion(Region.US)
+                    build()
+                }
                 result.success("OK")
             }
 
