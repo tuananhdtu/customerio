@@ -40,10 +40,12 @@ class CustomerioPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
                 )
                 builder.setRegion(Region.EU)
                 builder.build()
+                result.success("OK")
             }
 
             "setIdentifier" -> {
                 CustomerIO.instance().identify(call.arguments.toString())
+                result.success("OK")
             }
             else -> {
                 result.notImplemented()
