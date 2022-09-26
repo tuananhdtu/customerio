@@ -1,11 +1,10 @@
 import Flutter
 import UIKit
 import CioTracking
-import CioMessagingPushFCM
-import FirebaseMessaging
+import CioMessagingPushAPN
 
 
-public class SwiftCustomerioPlugin: NSObject, FlutterPlugin, MessagingDelegate {
+public class SwiftCustomerioPlugin: NSObject, FlutterPlugin, UIApplicationDelegate {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "customerio", binaryMessenger: registrar.messenger())
     let instance = SwiftCustomerioPlugin()
@@ -25,7 +24,6 @@ public class SwiftCustomerioPlugin: NSObject, FlutterPlugin, MessagingDelegate {
 
           _ =  CustomerIO(siteId: siteId as! String, apiKey: apiKey as! String, region: Region.EU)
           
-          Messaging.messaging().delegate = self
           UIApplication.shared.registerForRemoteNotifications()
           result("OK")
           break;
@@ -39,8 +37,12 @@ public class SwiftCustomerioPlugin: NSObject, FlutterPlugin, MessagingDelegate {
       }
   }
     
-    public func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        MessagingPush.shared.messaging(messaging, didReceiveRegistrationToken: fcmToken)
+    public func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        MessagingPush.shared.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+    }
+    
+    public  func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        MessagingPush.shared.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
     }
 }
 

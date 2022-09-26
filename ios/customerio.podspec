@@ -15,7 +15,7 @@ Customer IO Plugin
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'CustomerIOMessagingPushFCM' , '~> 1.2.0-beta.1'
+  s.dependency 'CustomerIOMessagingPushAPN' , '~> 1.2.0-beta.1'
   s.dependency 'CustomerIOTracking' , '~> 1.2.0-beta.1'
   
   s.platform = :ios, '13.0'
